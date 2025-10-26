@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RUPOR нового времени — План проекта</title>
+  <meta name="description" content="Примерный одностраничный план проекта — навигация, цели, активность, Примеры, роли, безопасность и контакты." />
+  <style>
+    :root{
+      --bg:#0f1724; /* deep slate */
+      --card:#0b1220;
+      --muted:#9aa6b2;
+      --accent:#7dd3fc;
+      --accent-2:#60a5fa;
+      --glass: rgba(255,255,255,0.03);
+      --maxw:1100px;
+      --radius:14px; 
+      --gap:18px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background:linear-gradient(180deg,#071029 0%,var(--bg) 100%); color:#e6f0f6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .title{font-size:18px;font-weight:700}
+    .subtitle{font-size:13px;color:var(--muted);margin-top:2px}
+
+    nav{display:flex;gap:10px;flex-wrap:wrap}
+    nav a{color:var(--muted);text-decoration:none;font-size:13px;padding:8px 12px;border-radius:10px}
+    nav a:hover{background:var(--glass);color:var(--accent)}
+
+    main{display:grid;grid-template-columns:1fr;gap:18px;margin-top:22px}
+    .hero{background:linear-gradient(180deg, rgba(125,211,252,0.06), transparent);padding:22px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6);display:flex;flex-direction:column;gap:12px}
+    .hero h1{margin:0;font-size:24px}
+    .hero p{margin:0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    h2{margin:0 0 8px 0;font-size:16px}
+    p.small{color:var(--muted);margin:0;font-size:13px}
+    ul{margin:8px 0 0 18px;color:var(--muted)}
+
+    .examples{display:flex;flex-direction:column;gap:12px}
+    .step{display:flex;gap:12px;align-items:flex-start}
+    .step .num{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,0.03);font-weight:700}
+    .roles{display:flex;flex-direction:column;gap:8px}
+    .logo {
+    width: 70px;
+    height: 80px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    overflow: hidden; /* Убираем переполнение */
+    }
+
+    .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: translateY(-6%); /* Центрирование по вертикали */
+    }
+
+
+    footer{margin-top:12px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+    html {
+    height:100%;
+    background: linear-gradient(180deg,#071029 0%, #071029 100%); /* ровный фон без перехода */
+    }
+    body {
+    min-height:100vh;
+    margin:0;
+    background: transparent;
+    }
+
+    /* responsive */
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start}
+      nav{width:100%;overflow:auto}
+    }
+
+    /* small helpers */
+    .cta{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#072235;font-weight:700;text-decoration:none}
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:12px}
+    .kbd{background:rgba(255,255,255,0.03);padding:4px 8px;border-radius:6px;font-family:monospace;font-size:12px}
+
+    /* smooth scroll */
+    html{scroll-behavior:smooth}
+
+    /* print */
+    @media print{body{background:white;color:black} .logo{display:none} nav{display:none} .cta{display:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo"><img src="logo.svg"></div>
+        <div>
+          <div class="title">RUPOR нового времени</div>
+          <div class="subtitle">Краткий план проекта — "контрпропаганда"</div>
+        </div>
+      </div>
+      <nav aria-label="Основная навигация">
+        <a href="#overview">Обзор</a>
+        <a href="#goals">Цели</a>
+        <a href="#activities">Активности</a>
+        <a href="#examples">Примеры</a>
+        <a href="#roles">Роли</a>
+        <a href="#safety">Безопасность</a>
+        <a href="#contact" class="pill">Контакты</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero card" id="overview">
+        <h1>Кратко: что это и зачем</h1>
+        <p class="small">Проект — серия законных и безопасных общественных инициатив, цель которых — развивать медиаграмотность среди большого количества людей, объединять и поддерживать наших единомышленников. Форматы — листовки, перформансы, небольшие встречи и онлайн-ресурсы.</p>
+        <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="cta" href="#activities">Посмотреть активности</a>
+          <a class="muted kbd" href="#examples">Примеры</a>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2 id="goals">Цели проекта</h2>
+          <ul>
+            <li>Развивать свои идеи, распространять пацифизм, обращать внимание масс на проблемы гос-ва и их причины.</li>
+            <li>Создавать безопасные и законные форматы выражения мнения через искусство и диалог.</li>
+            <li>Построить сеть добровольцев и экспертов для проведения локальных мероприятий.</li>
+            <li>Документировать результаты и масштабировать успешные форматы.</li>
+          </ul>
+          <!-- <p class="small" style="margin-top:10px">Ключевой принцип — небольшие, выполнимые действия (проверка одной новости, участие в 1 мероприятии), а не радикальная мобилизация.</p> -->
+        </article>
+
+        <aside class="card">
+          <h2 id="activities">Основные активности</h2>
+          <ul>
+            <li><strong>Листовки и зины.</strong> Распространение листовок, побуждающих мыслить тех, "кого всё устраивало".</li>
+            <li><strong>Уличные перформансы.</strong> Чтение стихотворений. (+ваши идеи)</li>
+            <li><strong>Общие собрания.</strong> Собрания в рамках проекта для обсуждения норвых мероприятий и подведения итогов.</li>
+            <li><strong>Социальне опросы.</strong> Проведение видео-соц опросов на различные темы.</li>
+            <li><strong>Онлайн-ресурсы.</strong> Telegram канал, публикующий посты, сопутствующие листовкам или статьи по теме.</li>
+          </ul>
+          <p class="small">Каждый формат продумывается с упором на безопасность участников и законность действий.</p>
+        </aside>
+
+        <article class="card">
+          <h2 id="examples">Примеры</h2>
+          <div class="examples">
+            <div class="step"><div class="num">1</div><div><strong>Соц опрос</strong><div class="muted">Опрос случайных людей, по поводу удовлетворенности их жизни, прогнозов, надежд, последних новостей...</div></div></div>
+            <div class="step"><div class="num">2</div><div><strong>Листовки</strong><div class="muted">Распространение листовок, обличающих пративоправные действия властей в ходе дел с ул. музыкантами.</div></div></div>
+            <div class="step"><div class="num">3</div><div><strong>Чтение стихотворения</strong><div class="muted">Чтение стихотворений: "Реквием" А. Ахматова, "Сохрани мою речь навсегда" О. Мондельштам</div></div></div>
+            <div class="step"><div class="num">4</div><div><strong>Почтение памяти</strong><div class="muted">Посещение могилы Алексея Навального/место убийства Немцова.</div></div></div>
+          </div>
+          <p class="small">Всё приурочено к 30 октября (дню политзаключенных)</p>
+        </article>
+
+        <aside class="card">
+          <h2 id="roles">Роли и что нужно</h2>
+          <div class="roles">
+            <div><strong>Координатор:</strong> планирование, коммуникация, контакты площадок.</div>
+            <div><strong>Дизайнер:</strong> макеты листовок, постеров, постов в соцсетях.</div>
+            <div><strong>Юридический консультант:</strong> проверка форматов на соответствие закону.</div>
+            <div><strong>Волонтёры:</strong> помощь на мероприятиях, фото/видео, сбор обратной связи.</div>
+            <div><strong>Редакторы:</strong> публикация постов для Telegram канала.</div>
+            <div><strong>Спонсоры:</strong> финансовая поддержка(отчёты по затраченным средствам).</div>
+          </div>
+        </aside>
+
+      </section>
+
+      <section class="card" id="safety">
+        <h2>Безопасность и этика</h2>
+        <p class="small">Безопасность участников — приоритет. Основные правила:</p>
+        <ul>
+          <li>Все активности — в рамках закона. Не подстрекаем к противоправным действиям.</li>
+          <li>Не публикуем личные данные добровольцев без согласия.</li>
+          <li>Перед каждой уличной акцией — короткий инструктаж для волонтёров и план действий на случай конфликта.</li>
+        </ul>
+      </section>
+
+      <section class="grid card">
+        <article>
+          <h2>Шаблон листовки — идея</h2>
+          <p class="small">Ваши идеи...</p>
+        </article>
+        <article>
+          <h2 id="contact">Контакты и следующий шаг</h2>
+          <p class="small">Если вы хотите помочь или проконсультировать — напишите: <span class="kbd"><a href="https://t.me/Not_Hleb">@Not_Hleb</a></span> (Telegram) или <span class="kbd">ruporofnewtime@gmail.com</span>. Приложу подробный план и бюджет по запросу.</p>
+          <p class="small">Можно скачать эту страницу как HTML и править локально.</p>
+        </article>
+      </section>
+
+      <footer>
+        <div>...</div>
+        <div class="muted">...</div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
